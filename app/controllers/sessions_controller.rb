@@ -5,10 +5,15 @@ get '/login' do
 end
 
 post '/sessions' do
+  @params = params
   @user = User.find_by(username: params[:username])
-  if @user.password == params[:password]
-    login(@user)
-    redirect '/'
+  if @user
+    if @user.password == params[:password]
+      login(@user)
+      redirect '/'
+    else
+      erb :'/sessions/new'
+    end
   else
     erb :'/sessions/new'
   end

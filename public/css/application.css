@@ -14,21 +14,22 @@ input, textarea {
 }
 
 header {
- padding: .5em 1em;
+  padding: .5em 1em;
+  background-color: antiquewhite;
 }
 header form, span form {
- display: inline-block;
+  display: inline-block;
 }
 
 a {
-  color: darkblue;
+  color: #333333;
 }
 
 .sign-out-link, .delete-link {
   display: inline-block;
   border: none;
   background: none;
-  color: darkblue;
+  color: #333333;
   font-size: inherit;
   text-decoration: underline;
   cursor: pointer;
@@ -37,4 +38,9 @@ a {
 
 .control-span {
   font-size: 75%;
+}
+
+.errors li {
+  list-style: none;
+  color: red;
 }

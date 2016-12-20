@@ -7,12 +7,12 @@ end
 
 # create
 post '/users' do
-  if params[:password] != params[:confirm_password]
-    # TODO show the user an error message
-    return erb :'users/new'
-  end
+  # if params[:password] != params[:confirm_password]
+  #   # TODO show the user an error message
+  #   return erb :'users/new'
+  # end
 
-  @user = User.new(username: params[:username])
+  @user = User.new(params[:user])
   @user.password = params[:password]
 
   if @user.save

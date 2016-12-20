@@ -1,0 +1,14 @@
+
+<% if !@params.empty? && !@user%>
+  <section class="errors">
+      <ul>
+          <li><span>Username or password is invalid.</span></li>
+      </ul>
+  </section>
+<% elsif @user && @user.password != params[:password] %>
+    <section class="errors">
+        <ul>
+          <li><span>Username or password is invalid.</span></li>
+        </ul>
+    </section>
+<% end %>

@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :things
-  validates :username, uniqueness: true
+  validates :username, :email, :password_hash, presence: true
+  validates :username, :email, uniqueness: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+
 
   def password
     @password ||= BCrypt::Password.new(password_hash)
