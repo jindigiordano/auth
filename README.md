@@ -1,1 +1,1 @@
-Authentication & Authorization
+Authentication & Authorization Skeleton for Sinatra
